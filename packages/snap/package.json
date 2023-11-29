@@ -28,7 +28,8 @@
   },
   "dependencies": {
     "@metamask/snaps-sdk": "^1.2.0",
-    "buffer": "^6.0.3"
+    "buffer": "^6.0.3",
+    "dayjs": "^1.11.10"
   },
   "devDependencies": {
     "@jest/globals": "^29.5.0",

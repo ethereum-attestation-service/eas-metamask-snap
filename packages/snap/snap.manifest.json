@@ -1,13 +1,13 @@
 {
   "version": "0.1.0",
   "description": "An example Snap written in TypeScript.",
-  "proposedName": "TypeScript Example",
+  "proposedName": "EAS",
   "repository": {
     "type": "git",
     "url": "https://github.com/MetaMask/template-snap-monorepo.git"
   },
   "source": {
-    "shasum": "/bL+Jugx/3+81D1r/shUaYOQP5VUmoop6hcaY+Q33vM=",
+    "shasum": "Tkl/LkeaMqEM8mcEy8v/Y9r1RNtpCDHGZjXFb/qM0bo=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
@@ -18,6 +18,10 @@
     }
   },
   "initialPermissions": {
+    "endowment:network-access": {},
+    "endowment:transaction-insight": {
+      "allowTransactionOrigin": true
+    },
     "snap_dialog": {},
     "endowment:rpc": {
       "dapps": true,
