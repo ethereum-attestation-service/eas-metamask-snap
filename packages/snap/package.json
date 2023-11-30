@@ -1,5 +1,5 @@
 {
-  "name": "eas-metamask-snap",
+  "name": "@ethereum-attestation-service/eas-metamask-snap",
   "version": "0.1.2",
   "description": "A Metamask snap for insights into EAS attestations",
   "repository": {

@@ -7,12 +7,12 @@
     "url": "https://github.com/ethereum-attestation-service/eas-metamask-snap.git"
   },
   "source": {
-    "shasum": "YhiEwt+S2DseSwXVPhdWxMBcd7ck2W+HX/sXwn+Nj24=",
+    "shasum": "5MfKGj+VMWy711M4qph9/X6RAyeQqJqj1Cma/69RXU0=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
         "iconPath": "images/icon.svg",
-        "packageName": "eas-metamask-snap",
+        "packageName": "@ethereum-attestation-service/eas-metamask-snap",
         "registry": "https://registry.npmjs.org/"
       }
     }
