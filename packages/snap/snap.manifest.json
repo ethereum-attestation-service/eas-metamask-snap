@@ -1,18 +1,18 @@
 {
-  "version": "0.1.0",
-  "description": "An example Snap written in TypeScript.",
+  "version": "0.1.2",
+  "description": "A Metamask snap for insights into EAS attestations",
   "proposedName": "EAS",
   "repository": {
     "type": "git",
-    "url": "https://github.com/MetaMask/template-snap-monorepo.git"
+    "url": "https://github.com/ethereum-attestation-service/eas-metamask-snap.git"
   },
   "source": {
-    "shasum": "FkRD4HgFDLOZ5NGWvOKLQUOxlApHpJPrGchW9F3dJRw=",
+    "shasum": "YhiEwt+S2DseSwXVPhdWxMBcd7ck2W+HX/sXwn+Nj24=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
         "iconPath": "images/icon.svg",
-        "packageName": "snap",
+        "packageName": "eas-metamask-snap",
         "registry": "https://registry.npmjs.org/"
       }
     }
