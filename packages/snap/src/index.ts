@@ -112,8 +112,6 @@ export const onTransaction: OnTransactionHandler = async ({ transaction }) => {
   contentToRender.push(text('**Data**'));
   contentToRender.push(divider());
 
-  console.log('sa', schemaResult.data.schema.schema, attestationData);
-
   const decodedData = schemaEncoder.decodeData(attestationData);
 
   decodedData.forEach((dd) => {
