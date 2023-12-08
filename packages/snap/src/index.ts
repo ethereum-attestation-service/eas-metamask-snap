@@ -7,6 +7,7 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import { ethers } from 'ethers';
 
 import { EASabi } from './easABI';
+import { EAS_CHAIN_CONFIGS } from './utils';
 
 dayjs.extend(advancedFormat);
 dayjs.extend(relativeTime);
@@ -33,14 +34,15 @@ const postData = async (url = '', data = {}) => {
   return response.json();
 };
 
-export const onTransaction: OnTransactionHandler = async ({ transaction }) => {
+export const onTransaction: OnTransactionHandler = async ({
+  transaction,
+  chainId,
+}) => {
   if (!transaction.data?.startsWith('0xf17325e7')) {
     return {
       content: panel([text('This transaction is not an EAS attestation')]),
     };
   }
-
-  console.log('tx', transaction.data);
 
   const contentToRender = [];
 
@@ -63,20 +65,27 @@ export const onTransaction: OnTransactionHandler = async ({ transaction }) => {
     data: attestationData,
   } = data;
 
+  const config = EAS_CHAIN_CONFIGS.find(
+    (chain) => chain.chainId === Number(chainId),
+  );
+
   const schemaResult: {
     data: {
       schema: {
         schema: string;
       };
     };
-  } = await postData('https://optimism.easscan.org/graphql', {
-    query: `query Schema {
+  } = await postData(
+    `https://${config ? config.subdomain : ''}easscan.org/graphql`,
+    {
+      query: `query Schema {
   schema(where: { id: "${schema}" }) {
     schema
   }
 }`,
-    variables: {},
-  });
+      variables: {},
+    },
+  );
 
   const schemaEncoder = new SchemaEncoder(schemaResult.data.schema.schema);
 
