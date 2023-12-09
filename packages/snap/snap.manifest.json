@@ -7,7 +7,7 @@
     "url": "https://github.com/ethereum-attestation-service/eas-metamask-snap.git"
   },
   "source": {
-    "shasum": "NHPjKi1prU6vY28NW5Cg1k86YjF7xu7YfnGBBFhTdaw=",
+    "shasum": "FNqPRariMWggUleFLa8m6YfSXb8DlJWrA88F70Mfy0M=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
