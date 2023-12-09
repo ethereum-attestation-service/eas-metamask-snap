@@ -65,8 +65,10 @@ export const onTransaction: OnTransactionHandler = async ({
     data: attestationData,
   } = data;
 
+  console.log('chainId', chainId);
+
   const config = EAS_CHAIN_CONFIGS.find(
-    (chain) => chain.chainId === Number(chainId),
+    (chain) => chain.chainId === parseInt(chainId.split(':')[1] ?? '', 16),
   );
 
   const schemaResult: {
