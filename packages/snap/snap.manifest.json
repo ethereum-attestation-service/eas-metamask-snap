@@ -7,7 +7,7 @@
     "url": "https://github.com/ethereum-attestation-service/eas-metamask-snap.git"
   },
   "source": {
-    "shasum": "FNqPRariMWggUleFLa8m6YfSXb8DlJWrA88F70Mfy0M=",
+    "shasum": "+4jFoZOG5GE6qCyRfetrBsJvIviltZFLDf6WfE49U3Q=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
@@ -19,9 +19,7 @@
   },
   "initialPermissions": {
     "endowment:network-access": {},
-    "endowment:transaction-insight": {
-      "allowTransactionOrigin": true
-    }
+    "endowment:transaction-insight": {}
   },
   "manifestVersion": "0.1"
 }
