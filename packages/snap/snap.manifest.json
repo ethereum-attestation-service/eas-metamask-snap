@@ -1,5 +1,5 @@
 {
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "A Metamask snap for insights into EAS attestations",
   "proposedName": "EAS",
   "repository": {
@@ -7,7 +7,7 @@
     "url": "https://github.com/ethereum-attestation-service/eas-metamask-snap.git"
   },
   "source": {
-    "shasum": "C+LnI3v/Ca7Ck/v0SSN9AA5tjU32lOU/Q5DAxJB6vR0=",
+    "shasum": "qP2MlmkWDfqWbS30dOSpiHHUF3DG8lj9U31cgBt5ffo=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
