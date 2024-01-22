@@ -1,6 +1,6 @@
 import { expect } from '@jest/globals';
 import { installSnap } from '@metamask/snaps-jest';
-import { divider, panel, text } from '@metamask/snaps-sdk';
+import { copyable, divider, panel, text } from '@metamask/snaps-sdk';
 
 describe('onTransaction', () => {
   it('should decode the attestation', async () => {
@@ -16,28 +16,28 @@ describe('onTransaction', () => {
       panel([
         text('**Schema**'),
         divider(),
-        text(
+        copyable(
           '0xf58b8b212ef75ee8cd7e8d803c37c03e0519890502d5e99ee2412aae1456cafe',
         ),
         text('​'),
         text('**Recipient**'),
         divider(),
-        text('0x0000000000000000000000000000000000000000'),
+        copyable('0x0000000000000000000000000000000000000000'),
         text('​'),
         text('**Ref UID**'),
         divider(),
-        text(
+        copyable(
           '0x0000000000000000000000000000000000000000000000000000000000000000',
         ),
         text('​'),
         text('**Revocable**'),
         divider(),
-        text('true'),
+        copyable('true'),
         text('​'),
         text('**Data**'),
         divider(),
         text('**statement**'),
-        text(
+        copyable(
           'Attestations are the perfect Lego blocks for describing identity and reputation.',
         ),
       ]),
