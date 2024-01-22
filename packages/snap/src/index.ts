@@ -1,6 +1,6 @@
 import { SchemaEncoder } from '@ethereum-attestation-service/eas-sdk';
 import type { OnTransactionHandler } from '@metamask/snaps-sdk';
-import { divider, panel, text } from '@metamask/snaps-sdk';
+import { copyable, divider, panel, text } from '@metamask/snaps-sdk';
 import dayjs from 'dayjs';
 import advancedFormat from 'dayjs/plugin/advancedFormat';
 import relativeTime from 'dayjs/plugin/relativeTime';
@@ -91,31 +91,31 @@ export const onTransaction: OnTransactionHandler = async ({
 
   contentToRender.push(text('**Schema**'));
   contentToRender.push(divider());
-  contentToRender.push(text(schema));
+  contentToRender.push(copyable(schema));
   contentToRender.push(text('\u200B'));
 
   contentToRender.push(text('**Recipient**'));
   contentToRender.push(divider());
-  contentToRender.push(text(recipient));
+  contentToRender.push(copyable(recipient));
   contentToRender.push(text('\u200B'));
 
   contentToRender.push(text('**Ref UID**'));
   contentToRender.push(divider());
-  contentToRender.push(text(refUID));
+  contentToRender.push(copyable(refUID));
   contentToRender.push(text('\u200B'));
 
   if (Number(expirationTime) !== 0) {
     contentToRender.push(text('**Expiration Time**'));
     contentToRender.push(divider());
     contentToRender.push(
-      text(dayjs(Number(expirationTime)).format(timeFormatString)),
+      copyable(dayjs(Number(expirationTime)).format(timeFormatString)),
     );
     contentToRender.push(text('\u200B'));
   }
 
   contentToRender.push(text('**Revocable**'));
   contentToRender.push(divider());
-  contentToRender.push(text(revocable.toString()));
+  contentToRender.push(copyable(revocable.toString()));
   contentToRender.push(text('\u200B'));
 
   contentToRender.push(text('**Data**'));
@@ -124,8 +124,9 @@ export const onTransaction: OnTransactionHandler = async ({
   const decodedData = schemaEncoder.decodeData(attestationData);
 
   decodedData.forEach((dd) => {
+    // Name will be a variable-like string
     contentToRender.push(text(`**${dd.name}**`));
-    contentToRender.push(text(dd.value.value.toString()));
+    contentToRender.push(copyable(dd.value.value.toString()));
   });
 
   return {
