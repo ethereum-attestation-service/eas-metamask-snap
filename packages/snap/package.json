@@ -1,6 +1,6 @@
 {
   "name": "@ethereum-attestation-service/eas-metamask-snap",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A Metamask snap for insights into EAS attestations",
   "repository": {
     "type": "git",
@@ -24,7 +24,9 @@
     "lint:misc": "prettier '**/*.json' '**/*.md' '!CHANGELOG.md' --ignore-path .gitignore",
     "serve": "mm-snap serve",
     "start": "mm-snap watch",
-    "test": "jest"
+    "test": "jest",
+    "prepare:release": "yarn build && npx mm-snap manifest --fix"
+
   },
   "dependencies": {
     "@ethereum-attestation-service/eas-sdk": "^1.3.4",
